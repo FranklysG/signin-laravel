@@ -31,7 +31,14 @@ class AuthRequest extends FormRequest
         return [
             'name' => 'string|required',
             'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'string|required|min:6'
+            'password' => 'string|required|min:6',
+            'address.street' => 'string|max:255',
+            'address.district' => 'string|max:255',
+            'address.number' => 'string|max:255',
+            'address.city' => 'string|max:255',
+            'address.state' => 'string|max:255',
+            'address.country' => 'string|max:255',
+            'address.postal_code' => 'string|max:10',
         ];
     }
 
@@ -46,7 +53,7 @@ class AuthRequest extends FormRequest
     {
         $this->ensureIsNotRateLimited();
 
-        if (! Auth::attempt($this->only('name', 'email', 'password'), $this->boolean('remember'))) {
+        if (!Auth::attempt($this->only('name', 'email', 'password'), $this->boolean('remember'))) {
             RateLimiter::hit($this->throttleKey());
 
             throw ValidationException::withMessages([
@@ -66,7 +73,7 @@ class AuthRequest extends FormRequest
      */
     public function ensureIsNotRateLimited()
     {
-        if (! RateLimiter::tooManyAttempts($this->throttleKey(), 5)) {
+        if (!RateLimiter::tooManyAttempts($this->throttleKey(), 5)) {
             return;
         }
 
@@ -89,6 +96,6 @@ class AuthRequest extends FormRequest
      */
     public function throttleKey()
     {
-        return Str::lower($this->input('email')).'|'.$this->ip();
+        return Str::lower($this->input('email')) . '|' . $this->ip();
     }
 }

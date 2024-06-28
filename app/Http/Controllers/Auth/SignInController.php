@@ -25,7 +25,7 @@ class SignInController extends Controller
             $data = $request->validated();
             $user = $repository->create($data);
             $user->token = $user->createToken('auth_token')->plainTextToken;
-
+            
             return $this->apiResponse->successResponse('User registered with success', $user->toArray());
         } catch (QueryException $e) {
             return $this->apiResponse->errorResponse('Error creating user: ' . $e->getMessage());

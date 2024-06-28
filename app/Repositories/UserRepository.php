@@ -12,4 +12,13 @@ class UserRepository extends BaseRepository
     {
         parent::__construct(User::class);
     }
+
+    public function create($data)
+    {
+        $user = $this->model->create($data);
+        if (isset($data['address'])) {
+            $user->address()->create($data['address']);
+        }
+        return $user->fresh();
+    }
 }
