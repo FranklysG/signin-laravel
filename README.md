@@ -25,6 +25,7 @@ On project vscode terminal run, one and one
 ```yml
 docker exec -it signin_app_web composer install
 docker exec -it signin_app_web php artisan migrate:fresh --seed
+docker exec -it signin_app_web php artisan test
 ```
 ##### Run Project Frontend : 
 
