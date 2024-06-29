@@ -17,7 +17,7 @@ class UserTest extends TestCase
             'password' => 'password',
         ];
 
-        $response = $this->post(route('api.signin.store'), $data);
+        $response = $this->post(route('api.auth.store'), $data);
         $user = $response->json();
 
         $response->assertStatus(200);
@@ -43,10 +43,9 @@ class UserTest extends TestCase
             ]
         ];
 
-        $response = $this->post(route('api.signin.store'), $data);
+        $response = $this->post(route('api.auth.store'), $data);
         $user = $response->json();
         
-        dd($user);
         $response->assertStatus(200);
         $this->assertEquals(7, count($user['data']));
         $this->assertNotNull($user);
