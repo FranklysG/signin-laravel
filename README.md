@@ -36,3 +36,9 @@ yarn dev
 ```yml
 http://localhost
 ```
+##### Default user : 
+
+```yml
+login: admin@gmail.com
+pass: password
+```
