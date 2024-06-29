@@ -33,7 +33,6 @@ class PasswordResetLinkController extends Controller
             ]);
         }
 
-        // $this->apiResponse->successResponse('User registered with success', $user->toArray());
-        return response()->json(['status' => __($status)]);
+        return $this->apiResponse->successResponse('User registered with success', __($status));
     }
 }
