@@ -33,7 +33,7 @@ $(document).ready(() => {
       success: function (response) {
         var lista = $('#list-all-users');
         lista.empty();
-        
+
         response.data.forEach(function (item) {
           const name = item.name
           const hour = new Date(item.created_at)
@@ -58,24 +58,43 @@ $(document).ready(() => {
     });
   }
 
-  $('#register-btn').click(() => {
-    var data = $("#form-register").serialize();
+  $('#register-btn').click(function () {
+    const postalCode = $('#postal_code').val();
+    const inputField = $('#postal_code');
 
     $.ajax({
-      type: 'POST',
-      url: '/api/register',
-      headers,
-      data,
+      type: 'GET',
+      url: `https://viacep.com.br/ws/${postalCode}/json/`,
       success: function (response) {
-        if (response.headerCode === 200) {
-          localStorage.setItem('token', response.data.token)
-          window.location.replace('/dashboard');
-        } else if (response.status === 3) {
-          console.log('error')
+        if (response.erro) {
+          inputField.addClass('bg-red-200');
+          alert('CEP inválido. Por favor, tente novamente.');
+        } else {
+          inputField.removeClass('bg-red-200');
+
+          var data = $("#form-register").serialize();
+          $.ajax({
+            type: 'POST',
+            url: '/api/register',
+            data: data,
+            success: function (response) {
+              if (response.headerCode === 200) {
+                localStorage.setItem('token', response.data.token);
+                window.location.replace('/dashboard');
+              } else if (response.status === 3) {
+                console.log('error');
+              }
+            }
+          });
         }
+      },
+      error: function (xhr, status, error) {
+        inputField.addClass('bg-red-200');
+        alert('Erro ao buscar CEP. Por favor, tente novamente.');
       }
-    })
-  })
+    });
+  });
+
 
   $('#signin-btn').click(() => {
     var data = $("#form-signin").serialize();

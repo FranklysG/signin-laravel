@@ -22,7 +22,7 @@
                       <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                       <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                     </svg>
-                  <li arial-label="cache-class" class="hidden px-4 py-4 sm:px-6 lg:px-8">
+                  <li arial-label="cache-class" class="hidden bg-red-200 px-4 py-4 sm:px-6 lg:px-8">
                     <div class="flex items-center gap-x-3">
                       <img src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="h-6 w-6 flex-none rounded-full bg-gray-800">
                       <h3 class="flex-auto truncate text-sm font-semibold leading-6 text-white">${name}</h3>
