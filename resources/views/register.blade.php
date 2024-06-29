@@ -46,13 +46,33 @@
                   <div>
                     <label for="street" class="block text-sm font-medium leading-6 dark:text-white">Rua</label>
                     <div class="mt-2">
-                      <input id="street" name="street" type="street" autocomplete="confirm_password" required class="block w-full rounded-md border-0 px-1.5 py-1.5 dark:text-zinc-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#FF2D20] sm:text-sm sm:leading-6">
+                      <input id="street" name="address[street]" type="street" autocomplete="confirm_password" required class="block w-full rounded-md border-0 px-1.5 py-1.5 dark:text-zinc-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#FF2D20] sm:text-sm sm:leading-6">
                     </div>
                   </div>
                   <div>
                     <label for="district" class="block text-sm font-medium leading-6 dark:text-white">Bairro</label>
                     <div class="mt-2">
-                      <input id="district" name="district" type="district" autocomplete="district" required class="block w-full rounded-md border-0 px-1.5 py-1.5 dark:text-zinc-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#FF2D20] sm:text-sm sm:leading-6">
+                      <input id="district" name="address[district]" type="district" autocomplete="district" required class="block w-full rounded-md border-0 px-1.5 py-1.5 dark:text-zinc-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#FF2D20] sm:text-sm sm:leading-6">
+                    </div>
+                  </div>
+                </div>
+                <div>
+                    <label for="city" class="block text-sm font-medium leading-6 dark:text-white">Cidade</label>
+                    <div class="mt-2">
+                      <input id="city" name="address[city]" type="city" autocomplete="city" required class="block w-full rounded-md border-0 px-1.5 py-1.5 dark:text-zinc-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#FF2D20] sm:text-sm sm:leading-6">
+                    </div>
+                  </div>
+                <div class="grid grid-cols-2 gap-2">
+                  <div>
+                    <label for="number" class="block text-sm font-medium leading-6 dark:text-white">Numero</label>
+                    <div class="mt-2">
+                      <input id="number" name="address[number]" type="number" autocomplete="number" required class="block w-full rounded-md border-0 px-1.5 py-1.5 dark:text-zinc-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#FF2D20] sm:text-sm sm:leading-6">
+                    </div>
+                  </div>
+                  <div>
+                    <label for="postal_code" class="block text-sm font-medium leading-6 dark:text-white">CEP</label>
+                    <div class="mt-2">
+                      <input id="postal_code" name="address[postal_code]" type="postal_code" autocomplete="postal_code" required class="block w-full rounded-md border-0 px-1.5 py-1.5 dark:text-zinc-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#FF2D20] sm:text-sm sm:leading-6">
                     </div>
                   </div>
                 </div>
@@ -60,20 +80,14 @@
                   <div>
                     <label for="state" class="block text-sm font-medium leading-6 dark:text-white">Estado</label>
                     <div class="mt-2">
-                      <input id="state" name="state" type="state" autocomplete="state" required class="block w-full rounded-md border-0 px-1.5 py-1.5 dark:text-zinc-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#FF2D20] sm:text-sm sm:leading-6">
+                      <input id="state" name="address[state]" type="state" autocomplete="state" required class="block w-full rounded-md border-0 px-1.5 py-1.5 dark:text-zinc-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#FF2D20] sm:text-sm sm:leading-6">
                     </div>
                   </div>
                   <div>
-                    <label for="coutry" class="block text-sm font-medium leading-6 dark:text-white">Pais</label>
+                    <label for="country" class="block text-sm font-medium leading-6 dark:text-white">Pais</label>
                     <div class="mt-2">
-                      <input id="coutry" name="coutry" type="coutry" autocomplete="coutry" required class="block w-full rounded-md border-0 px-1.5 py-1.5 dark:text-zinc-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#FF2D20] sm:text-sm sm:leading-6">
+                      <input id="country" name="address[country]" type="country" autocomplete="country" required class="block w-full rounded-md border-0 px-1.5 py-1.5 dark:text-zinc-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#FF2D20] sm:text-sm sm:leading-6">
                     </div>
-                  </div>
-                </div>
-                <div>
-                  <label for="postal_code" class="block text-sm font-medium leading-6 dark:text-white">CEP</label>
-                  <div class="mt-2">
-                    <input id="postal_code" name="postal_code" type="postal_code" autocomplete="postal_code" required class="block w-full rounded-md border-0 px-1.5 py-1.5 dark:text-zinc-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#FF2D20] sm:text-sm sm:leading-6">
                   </div>
                 </div>
                 <div>

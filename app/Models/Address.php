@@ -16,8 +16,8 @@ class Address extends Model
     'district',
     'city',
     'state',
-    'postal_code', 
     'country',
+    'postal_code'
   ];
 
   public function user()
