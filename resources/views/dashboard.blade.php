@@ -12,6 +12,9 @@
               <aside class="lg:overflow-y-auto">
                 <header class="flex items-center justify-between border-b border-white/5 px-4 py-4 sm:px-6 sm:py-6 lg:px-8">
                   <h2 class="text-base font-semibold leading-7 text-white">Todos usuarios</h2>
+                  <div class="flex items-center gap-2">
+                    <button id="logout-btn" type="button" class="flex w-full items-center justify-center gap-3 rounded-md bg-white px-3 py-2 text-sm font-semibold dark:text-zinc-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus-visible:ring-transparent">Sair</button>
+                  </div>
                 </header>
                 <ul id="list-all-users" role="list" class="divide-y divide-white/5">
                   <li class="w-full flex justify-center items-center px-4 py-4 sm:px-6 lg:px-8">
@@ -19,6 +22,14 @@
                       <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                       <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                     </svg>
+                  <li arial-label="cache-class" class="hidden px-4 py-4 sm:px-6 lg:px-8">
+                    <div class="flex items-center gap-x-3">
+                      <img src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="h-6 w-6 flex-none rounded-full bg-gray-800">
+                      <h3 class="flex-auto truncate text-sm font-semibold leading-6 text-white">${name}</h3>
+                      <time datetime="2023-01-23T11:00" class="flex-none text-xs text-gray-600">à ${hour.getMinutes()} min</time>
+                    </div>
+                    <p class="mt-3 truncate text-sm text-gray-500">Endereço: <span class="text-gray-400">${address}</span></p>
+                  </li>
                   </li>
                 </ul>
               </aside>

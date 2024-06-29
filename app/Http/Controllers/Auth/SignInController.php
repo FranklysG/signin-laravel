@@ -78,8 +78,6 @@ class SignInController extends Controller
         Session::flush();
         Session::regenerateToken();
 
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
         return response()->noContent();
     }
 }
