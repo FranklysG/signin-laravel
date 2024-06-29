@@ -39,7 +39,7 @@
                 <div>
                   <label for="confirm_password" class="block text-sm font-medium leading-6 dark:text-white">Confirme senha</label>
                   <div class="mt-2">
-                    <input id="confirm_password" name="confirm_password" type="confirm_password" autocomplete="current-confirm_password" required class="block w-full rounded-md border-0 px-1.5 py-1.5 dark:text-zinc-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#FF2D20] sm:text-sm sm:leading-6">
+                    <input id="confirm_password" name="confirm_password" type="password" autocomplete="password" required class="block w-full rounded-md border-0 px-1.5 py-1.5 dark:text-zinc-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#FF2D20] sm:text-sm sm:leading-6">
                   </div>
                 </div>
                 <div class="grid grid-cols-2 gap-2">

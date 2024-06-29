@@ -61,6 +61,18 @@ $(document).ready(() => {
   $('#register-btn').click(function () {
     const postalCode = $('#postal_code').val();
     const inputField = $('#postal_code');
+    const passwordField = $('input[name="password"]');
+    const confirmPasswordField = $('input[name="confirm_password"]');
+
+    if (password !== confirm_password) {
+      alert('As senhas não coincidem. Por favor, verifique.');
+      passwordField.addClass('bg-red-200');
+      confirmPasswordField.addClass('bg-red-200');
+      return;
+    } else {
+      passwordField.removeClass('bg-red-200');
+      confirmPasswordField.removeClass('bg-red-200');
+    }
 
     $.ajax({
       type: 'GET',
