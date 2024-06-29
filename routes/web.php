@@ -11,6 +11,9 @@ Route::get('/register', function () {
 Route::get('/forgot', function () {
     return view('forgot');
 });
+Route::get('/forget', function () {
+    return view('forget');
+})->name('password.reset');
 Route::get('/dashboard', function () {
     return view('dashboard');
 });

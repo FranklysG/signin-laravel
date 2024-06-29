@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\SignInController;
 use App\Http\Controllers\User\UserController;
 use Illuminate\Http\Request;
@@ -17,3 +18,6 @@ Route::post('/signin', [SignInController::class, 'auth'])
 Route::get('/users', [UserController::class, 'show'])
     ->middleware('auth:sanctum')
     ->name('api.user.show');
+
+Route::post('/forgot-password', [PasswordResetLinkController::class, 'store'])
+    ->name('api.password.email');

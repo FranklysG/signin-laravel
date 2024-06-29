@@ -141,4 +141,19 @@ $(document).ready(() => {
       }
     });
   })
+  
+  $('#reset-pass-btn').click(() => {
+    var data = $("#form-reset-pass-btn").serialize();
+    
+    $.ajax({
+      type: 'POST',
+      url: '/api/forgot-password',
+      headers,
+      data,
+      success: function (response) {
+      },
+      error: function (xhr, status, error) {
+      }
+    });
+  })
 });
