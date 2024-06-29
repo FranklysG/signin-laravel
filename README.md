@@ -30,7 +30,7 @@ docker exec -it signin_app_web php artisan test
 ##### Run Project Frontend : 
 
 ```yml
-yarn dev
+yarn && yarn dev
 ```
 ##### Show Frontend : 
 
