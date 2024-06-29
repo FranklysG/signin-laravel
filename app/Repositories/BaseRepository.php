@@ -21,6 +21,11 @@ class BaseRepository
         return $this->model->get();
     }
 
+    public function getAllWithAddress()
+    {
+        return $this->model->with('address')->get();
+    }
+
     public function create($data)
     {
         return $this->model->create($data);
@@ -38,6 +43,11 @@ class BaseRepository
         $record = $this->getById($id);
         $record->delete();
         return $record;
+    }
+
+    public function getUserByEmail($email){
+        $model = $this->model->where('email', $email)->first();
+        return $model;
     }
 
     public function getByUuid($uuid, $relationships = [])

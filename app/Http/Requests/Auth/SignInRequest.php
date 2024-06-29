@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
 
-class AuthRequest extends FormRequest
+class SignInRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -29,16 +29,8 @@ class AuthRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'string|required',
-            'email' => 'required|string|email|max:255|unique:users',
+            'email' => 'required|string|email|max:255',
             'password' => 'string|required|min:6',
-            'address.street' => 'string|max:255',
-            'address.district' => 'string|max:255',
-            'address.number' => 'string|max:255',
-            'address.city' => 'string|max:255',
-            'address.state' => 'string|max:255',
-            'address.country' => 'string|max:255',
-            'address.postal_code' => 'string|max:10',
         ];
     }
 
